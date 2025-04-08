@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Bestilling - Blomsterbutik</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, textarea, select { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 20px; padding: 10px 15px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Telefonbestilling - Blomsterbutik</h1>
+
+  <form id="orderForm">
+    <label for="customerName">Kundens navn</label>
+    <input type="text" id="customerName" required>
+
+    <label for="phone">Telefonnummer</label>
+    <input type="tel" id="phone">
+
+    <label for="product">Vælg buket/produkt</label>
+    <select id="product" required>
+      <option value="">-- Vælg --</option>
+      <option>Buket - Klassisk (200 kr)</option>
+      <option>Buket - Farverig (250 kr)</option>
+      <option>Begravelseskrans</option>
+      <option>Valgfri (uddyb i note)</option>
+    </select>
+
+    <label for="deliveryDate">Leveringsdato</label>
+    <input type="date" id="deliveryDate">
+
+    <label for="deliveryTime">Tidspunkt (valgfrit)</label>
+    <input type="text" id="deliveryTime" placeholder="fx: formiddag, kl. 13-15">
+
+    <label for="message">Korttekst (valgfrit)</label>
+    <textarea id="message" rows="3"></textarea>
+
+    <label for="address">Leveringsadresse</label>
+    <textarea id="address" rows="2" required></textarea>
+
+    <label for="note">Intern note</label>
+    <textarea id="note" rows="2" placeholder="Allergier, særlige ønsker, betaling osv."></textarea>
+
+    <button type="submit">Gem bestilling</button>
+  </form>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Bestilling er noteret!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
